@@ -14,3 +14,12 @@ permalink: /about/
 > - 第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副； 
 > - 第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。 
 
+> **Seven times have I despised my soul:**  
+>
+> - *The first time when I saw her being meek that she might attain height.*
+> - *The second time when I saw her limping before the crippled.*
+> - *The third time when she was given to choose between the hard and the easy, and she chose the easy.*
+> - *The fourth time when she committed a wrong, and comforted herself that others also commit wrong.*
+> - *The fifth time when she forbore for weakness, and attributed her patience to strength.*
+> - *The sixth time when she despised the ugliness of a face, and knew not that it was one of her own masks.*
+> - *And the seventh time when she sang a song of praise, and deemed it a virtue.*
