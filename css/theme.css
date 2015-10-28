@@ -49,3 +49,7 @@ body {
 .author a {
     color: #ee4444;
 }
+
+#ds-reset .ds-powered-by {
+  display: none;
+}
