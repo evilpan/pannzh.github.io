@@ -12,30 +12,28 @@ GDB是在Linux命令行下对C/C++的程序进行调试常用的一个命令，�
 一、断点
 ----------
 
-　　断点类型有breakpoints, watchpoints, catchpoints.
+断点类型有breakpoints, watchpoints, catchpoints.
 
 #### 1).breakpoints:　
-　 普通断点，程序运行到该点时暂停（此时此行尚未运行），是gdb中最常用的断点，相关命令为：
+普通断点，程序运行到该点时暂停（此时此行尚未运行），是gdb中最常用的断点，相关命令为：  
 
 > *break [函数名，行数或者指令地址]  [condi]*  
-在指定地方加上断点
 
-例：
+在指定地方加上断点
+例：  
 
 > *(gdb) set $counter = 0*  
 > *(gdb) break 26 if ++$counter == 99*
 
-　　在第26行设置断点，每次触发断点的时候执行判断条件，仅在判断条件为真的时候使程序在断点处停止。在循环的debug中很好用。
-
-　　类似的命令还有condition等。
-
-　　*rbreak RE* 　　：在所有符合正则表达式RE的函数上加上断点
+在第26行设置断点，每次触发断点的时候执行判断条件，仅在判断条件为真的时候使程序在断点处停止。在循环的debug中很好用。
+类似的命令还有condition等。
+*rbreak RE:*  
+在所有符合正则表达式RE的函数上加上断点
 
 #### 2).watchpoints：
 也称为data breakpoints，在表达式值变化时停止执行的断点。
-
 > *watch expr[thread threadnum]*  
-　表达式可以是变量值，地址（如*(int *)0x12345678)或数学表达式。
+表达式可以是变量值，地址（如*(int *)0x12345678)或数学表达式。
 
 #### 3).catchpoints:
 程序事件断点，如c++异常
