@@ -13,7 +13,7 @@ categories: Tech
 
 ### 准备工具:  
 > - Linux操作系统，Windows下可以用虚拟机代替。
-> - 安装aircrack-ng（Kali操作系统自带）
+> - [aircrack-ng][aircrack]工具集
 > - 安装reaver（可选）
 
  
@@ -163,3 +163,4 @@ airodump抓包速度比较慢，为了加速包的产生，我们可以使用传
     目标信号普通: reaver -i mon0 -b MAC -a -S -vv -d2 -t 5 -c 1
     目标信号一般: reaver -i mon0 -b MAC -a -S -vv -d5 -c 1
 
+[aircrack]: http://www.aircrack-ng.org/doku.php?id=simple_wep_crack
