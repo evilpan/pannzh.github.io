@@ -22,7 +22,7 @@ layouts_dir:  ./_layouts
 data_dir:     ./_data
 includes_dir: ./_includes
 collections:  null
-paginate: 2
+paginate: 3
 paginate_path: "page:num"
 permalink:     date
 timezone:      null
@@ -32,29 +32,39 @@ baiduAccount: ''  #Baidu Analysis Tool
 duoshuo: 'pannzh' #Duoshuo comment
 comments: true    #Sitewide comment condition
 
-## Handling Reading
-#safe:         true
-#include:      [".htaccess"]
-#exclude:      []
-#keep_files:   [".git", ".svn"]
-#encoding:     "utf-8"
-#markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-#
-## Filtering Content
-#show_drafts: null
-#limit_posts: 10
-#future:      false
-#unpublished: false
-#
-## Plugins
-#whitelist: []
-#gems:      []
-#
-## Conversion
+# Handling Reading
+safe:         true
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
 #markdown:    kramdown
 #highlighter: rouge
 #lsi:         false
 #excerpt_separator: "\n\n"
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Filtering Content
+#show_drafts: null
+#limit_posts: 10
+#future:      false
+#unpublished: false
+
+## Plugins
+#whitelist: []
+#gems:      []
 #
 ## Serving
 #detach:  false
@@ -73,16 +83,7 @@ comments: true    #Sitewide comment condition
 #redcarpet:
 #  extensions: []
 #
-kramdown:
-  input: GFM
-  hard_wrap: false
-
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+#
 
 #Not surport by Github
 #  coderay:
