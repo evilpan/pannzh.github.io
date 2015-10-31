@@ -98,13 +98,13 @@ AP会忽略所有包并发送一个“DeAuthentication“包。这种情况下�
     18:22:42  Sending keep-alive packet
     18:22:52  Sending keep-alive packet
 
-### Step7.ARP请求重播攻击（可选，只在虚拟认证成功时才有效）
+### Step7. ARP请求重播攻击（可选，只在虚拟认证成功时才有效）
 
 airodump抓包速度比较慢，为了加速包的产生，我们可以使用传统的ARP请求重播攻击（ARP request replay attack）来快速生成IVs（Initialization Vectors）：
 
     aireplay-ng -3 -b AA:BB:CC:DD:EE:FF -h 00:11:22:33:44:55 mon0
 
-### Step8.攻击目标客户端使其掉线，获取握手包
+### Step8. 攻击目标客户端使其掉线，获取握手包
 
 和WEP破解最显著的区别是，由于WPA需要暴力破解，因此抓的包里必须至少包含一个握手包，
 我们可以发送一种称之为“Deauth”的数据包来将已连接至无线路由器的合法无线客户端断开，此时客户端就会重新连接无线路由器，
@@ -117,7 +117,7 @@ airodump抓包速度比较慢，为了加速包的产生，我们可以使用传
     -0 表示采用deauth攻击模式，后卖弄加上攻击次数，这里设置为1，可以根据情况设置为1-10不等（不要设太多不然对方会频繁掉线）
     -a 为AP的MAC ， -c为已连接的客户端MAC
 
-### Step9.暴力破解抓下来的包
+### Step9. 暴力破解抓下来的包
 
 一旦捕捉到WPA handshake，我们就可以开始进行破解了：
 
