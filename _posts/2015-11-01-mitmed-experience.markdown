@@ -262,8 +262,8 @@ ad.js之后，一切就脱离正轨了，我们需要找到原因，就必须再
 果然请求都是从ad.html发出的。
 
 至此为止，攻击过程是清楚了，但是源头还是没解决。一开始访问网站的时候，为什么请求了一个假的`baidu_c.h`呢？经过查找类似病例，发现很有
-可能是被**js缓存投毒**了，其基本原理是利用一些网站的个别缓存js很久不更新且缓存时间很长的事实，对其进行污染修改。从而导致受害者在浏览网站
-的时候与执行攻击者插入的内容。因此把`.mozilla`目录下的cache全部清空，再打开浏览器上网，世界终于清净了。
+可能是被**js缓存投毒**了，其基本原理是利用一些网站的个别缓存js很久不更新且缓存时间很长的事实，对其进行污染修改。致受害者在浏览网站
+的时候与执行攻击者插入的内容。因此把`.mozilla`目录下的cache全部清空，再打开浏览器上网，世界终于清净了。关于缓存投毒可以参考[Browser-Cache-Poisoning.pdf][Browser-Cache-Poisoning]
 
 ### 后记
 
@@ -272,3 +272,4 @@ ad.js之后，一切就脱离正轨了，我们需要找到原因，就必须再
 护自己还是很必要的。
 
 [githubio]: http://pannzh.github.io
+[Browser-Cache-Poisoning]: http://www.eecs.berkeley.edu/~yahel/papers/Browser-Cache-Poisoning.Song.Spring10.attack-project.pdf
