@@ -20,7 +20,7 @@ hamster这个软件是在**2007年**黑客大会上[Robert Graham][robert]展示
 产品，因此也有比较大的不稳定性，即便如此在如今还是在各种博客里被屡屡提及，所以我也简单介绍下这个工具
 的使用。
 
-hamster和ferret可以到官网[http://hamster.erratasec.com][http://hamster.erratasec.com]下载，但最近似乎没有
+hamster和ferret可以到官网[http://hamster.erratasec.com](http://hamster.erratasec.com)下载，但最近似乎没有
 更新了，毕竟快是十年前的东西。我是直接在robert的github上下载的c++源代码，总体功能并不复杂，就当学习一下大神
 的coding方法了。有一点值得一提，hamster用的是32位的库，因此自己如果是64位操作系统，编译或者运行都需要安装
 ia32-libs以及一些使用到的非标准库，同时源代码要进行简单的修改。为了方便我连同依赖直接fork到了[这里][my-hamster]。
