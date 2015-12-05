@@ -3,7 +3,7 @@ layout: post
 title:  "细说中间人攻击(二)"
 date:   2015-11-23 16:15:26
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 
 在[细说中间人攻击（一）][mitm-1]介绍了比较常见的中间人攻击做法，即用wireshark抓取数据包，

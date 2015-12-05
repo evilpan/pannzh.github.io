@@ -3,7 +3,7 @@ layout: post
 title:  "成为中间人的几种方式"
 date:   2015-11-27 19:15:26
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 
 前面几篇文章已经介绍了常见的中间人攻击方式，即窃听、修改和重定向（钓鱼）。当然这都是建立在我们完全掌握
