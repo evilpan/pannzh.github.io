@@ -3,7 +3,7 @@ layout: post
 title:  "细说中间人攻击(一)"
 date:   2015-11-01 11:11:26
 comments: true
-categories: Tech MITM
+categories: Tech
 ---
 
 在之前的[ARP欺骗与中间人攻击][last-post]讲到了MITM攻击的基础和原理，并且在实验中成功对网关和目标主机进行了ARP毒化，从而使得无论目标的外出数据或流入数据都会经过本机这个“中间人”。在后记里也略为提及到，

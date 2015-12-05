@@ -3,7 +3,7 @@ layout: post
 title:  "记一次被中间人攻击的经历"
 date:   2015-11-01 18:15:26
 comments: true
-categories: Tech MITM
+categories: Tech
 ---
 
 俗话说得好，常在河边走，哪能不湿鞋？俗话又说了，出来混，早晚要还的。只是没想到自己还的这么快。就在之前的
