@@ -3,7 +3,7 @@ layout: post
 title:  "P2P通信原理与实现"
 date:   2015-10-31 15:18:26
 comments: true
-categories: Tech
+categories: Tech P2P
 ---
 
 当今互联网到处存在着一些中间件(MIddleBoxes)，如NAT和防火墙，导致两个(不在同一内网)中的客户端无法直接通信。

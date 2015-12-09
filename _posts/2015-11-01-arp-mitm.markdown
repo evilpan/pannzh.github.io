@@ -136,4 +136,4 @@ ARP欺骗又叫ARP投毒（ARP poisoning），实现方式有很多，但其原�
 并且在网关MAC地址改变的时候发出提醒，从而防止ARP毒化攻击。还有就是最好不要在公共WiFi下浏览有重要隐私的网站，万一碰上不怀好意的人就在局域网中，那可就是真的“在阳光下行走”了。
 
 [wifi-crack]: http://pannzh.github.io/tech/2015/10/31/wifi-crack.html
-[p2p]: http://pannzh.github.io/tech/2015/10/31/p2p-over-middle-box.html
+[p2p]: http://pannzh.github.io/tech/p2p/2015/10/31/p2p-over-middle-box.html
