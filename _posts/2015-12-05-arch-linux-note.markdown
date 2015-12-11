@@ -187,8 +187,10 @@ Xorg默认安装的时候已经安装了部分开源的图形驱动，一般来�
 
 上述步骤完成后我们就能重启进入ArchLinux的命令行了，默认是tty1，没有桌面环境，而此时也好不能上网，需要手动配置。
 首先在`/etc/rc.conf`文件的NETWORKING段配置ip（你的IP）/netmask（子网掩码）/broadcast（广播地址）/ROUTES（路由），
-如果为动态，将/etc/rc.conf文件的eth0改为dhcp形式。**注意对于新版本的ArchLinux，启动程序的管理已经从initscript
-变成systemd，统一用systemctl命令管理而不用/etc/rc.conf管理。**
+如果为动态，将/etc/rc.conf文件的eth0改为dhcp形式。
+
+> - **注意 :** 对于新版本的ArchLinux，启动程序的管理已经从initscript
+    变成systemd，统一用systemctl命令管理而不用/etc/rc.conf管理。
 
 如果只有无线网络，我们可以用iwconfig命令连接上路由器：
 
