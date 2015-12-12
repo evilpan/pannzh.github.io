@@ -9,7 +9,7 @@ categories: Tech
 最近无意间发现一个基于ArchLinux的发行版——[BlackArch][BlackArch]，主题十分炫酷（中二）。当然渗透类的Linux
 发行版已经有BackTrack和Kali了，不过都是源于Debian的，使用者众多，随波逐流无法突显我们的逼格，
 要论小众，ArchLinux算是个中翘楚。呵呵开个玩笑，其实ArchLinux的亮点在于“小”，不同于其他发行版的“最小化安装”，
-ArchLinux的安装过程就与众不同，手动分区，手动配置bootloader，然后从网络源下载必要的包安装到指定的分区中。
+ArchLinux的安装过程需要手动分区，手动配置bootloader，然后从网络源下载必要的包安装到指定的分区中。
 安装完必备的软件（如gcc）后其余一概自己去添加，包括图形界面。对于喜欢定制而又不怕折腾的朋友来说，Arch系列确实
 是一个不错的选择。正好我还没有用过Arch系的发行版，因此就在虚拟机装一个体验一回，顺便把其中遇到的坑记录一下。
 
@@ -218,6 +218,8 @@ Xorg是X11的其中一个实现，而X11(X Window System)是一个C/S结构的�
     sudo pacman -S xfce4
     sudo pacman -S ttf-arphic-uming ttf-arphic-ukai ttf-bitstream-vera 
     sudo pacman -S ibus ibus-pinyin
+
+> **注意： **ibus在1.4版本后有较大修正，可能无法使用ibus-pinyin或ibus-sunpinyin输入中文，解决办法是用ibus-libpinyin代替。
 
 安装好后reboot，然后进入tty，用`startxfce4`就可以进入窗口管理器了：
 
