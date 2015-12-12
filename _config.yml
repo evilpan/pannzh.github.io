@@ -22,7 +22,6 @@ layouts_dir:  ./_layouts
 data_dir:     ./_data
 includes_dir: ./_includes
 collections:  null
-gems: [jekyll-paginate]
 paginate: 5
 paginate_path: "page:num"
 permalink:     date
