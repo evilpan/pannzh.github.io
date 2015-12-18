@@ -31,7 +31,7 @@ timezone:      null
 baiduAccount: ''  #Baidu Analysis Tool
 duoshuo: 'pannzh' #Duoshuo comment
 comments: true    #Sitewide comment condition
-share: true    #Sitewide share condition
+share: false    #Sitewide share condition
 
 # Handling Reading
 safe:         true
