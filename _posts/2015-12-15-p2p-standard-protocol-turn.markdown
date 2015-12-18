@@ -149,7 +149,7 @@ TURN要求client在给对等端发送indication之前先安装一个到对等端
       |                            dropped |             |             |
       |                                    |             |             |
 
-TURN支持两种方式来创建许可,一种是发送`CreatePermission request`
+TURN支持两种方式来创建许可,比如其中一种就是发送`CreatePermission request`.
 
 ## 信道机制(Channels)
 
