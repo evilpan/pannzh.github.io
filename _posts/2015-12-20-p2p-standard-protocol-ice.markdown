@@ -254,7 +254,7 @@ ICE是使用STUN/TURN工具性质的最主要协议之一,其中TURN一开始也
 而具体的代码以及实现可以参考:
 
 - [TurnServer][TurnServer]
-- [pjsip][rfc-sip]
+- [pjsip][PJSIP]
 
 [p2p-over-middleboxes]:http://pannzh.github.io/tech/p2p/2015/10/31/p2p-over-middle-box.html
 [stun]:http://pannzh.github.io/tech/p2p/2015/12/12/p2p-standard-protocol-stun.html
