@@ -9,9 +9,10 @@ categories: Life
 
 Good people all, of every sort,  
 Give ear unto my song;  
-
 And if you find it wondrous short,  
-It cannot hold you long. In Islington there was a man,  
+It cannot hold you long.  
+
+In Islington there was a man,  
 Of whom the world might say  
 That still a godly race he ran,  
 Whene'er he went to pray. A kind and gentle heart he had,  
