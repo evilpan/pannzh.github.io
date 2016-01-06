@@ -3,7 +3,7 @@ layout: post
 title:  "WIFI密码破解笔记"
 date:   2015-10-31 09:15:52
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 相对于前一段时间脆弱的WEP加密路由器而言，当今的路由器加密方式也大都改变为WPA/WPA2，使得无线路由器的破解难度增加。
 虽然如此，但还是有很多漏洞层出不穷，如针对路由器WPS的漏洞。退一步来说，即使加密算法无懈可击，我们还可以针对安全防护中最脆弱的部分——人——来进行破解。

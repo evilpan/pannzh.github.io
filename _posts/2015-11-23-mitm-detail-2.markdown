@@ -3,7 +3,7 @@ layout: post
 title:  "细说中间人攻击(二)"
 date:   2015-11-23 16:15:26
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 
 在[细说中间人攻击（一）][mitm-1]介绍了比较常见的中间人攻击做法，即用wireshark抓取数据包，
@@ -200,6 +200,6 @@ BeEF全称为Browser Exploitation Framework，是一个著名的浏览器劫持�
 至于怎么防御这类攻击，最好的方法就是浏览器禁cookie，禁javascript，禁flash，最终还是得和个人的上网体验相权衡，毕竟如果把眼睛都蒙上了，我还上什么网呢。
 
 
-[mitm-1]: http://pannzh.github.io/tech/2015/11/01/mitm-detail-1.html
+[mitm-1]: http://pannzh.github.io/tech/mitm/2015/11/01/mitm-detail-1.html
 [robert]: https://github.com/robertdavidgraham
 [my-hamster]: https://github.com/pannzh/hamster

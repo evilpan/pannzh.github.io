@@ -15,5 +15,17 @@
 </div>
 
 <div class="sidebar well">
+    <h1>Tags</h1>
+        {% assign categories_list = site.categories %}
+        {% for category in categories_list %}
+        <ul>
+            <li><a href="{{ site.baseurl }}/categories.html#{{ category[0] }}-ref">
+                    {{ category[0] | join: "/" }}
+                </a></li>
+        </ul>
+        {% endfor %}
+</div>
+
+<div class="sidebar well">
 {% include links-list.html %}
 </div>

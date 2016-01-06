@@ -3,7 +3,7 @@ layout: post
 title:  "细说中间人攻击(一)"
 date:   2015-11-01 11:11:26
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 
 在之前的[ARP欺骗与中间人攻击][last-post]讲到了MITM攻击的基础和原理，并且在实验中成功对网关和目标主机进行了ARP毒化，从而使得无论目标的外出数据或流入数据都会经过本机这个“中间人”。在后记里也略为提及到，
@@ -211,7 +211,7 @@ SSL卸载的原理是，利用目标的疏忽，将其HTTPS链接替换成HTTP�
 我们甚至可以不借助工具，通过socket编程就能自己写一个简单的中间人攻击程序。另外作为一个普通的用户而言，面对中间人的潜在威胁，也需要提高自己的安全防范意识，比如尽量使用https链接保护自身隐私，对于SSL证书的
 异常提醒也要非常注意，尤其是在涉及到金钱交易的网站之时，更是需要小心慎重，以免落入他人的陷阱之中。
 
-[last-post]: http://pannzh.github.io/tech/2015/11/01/arp-mitm.html
+[last-post]: http://pannzh.github.io/mitm/tech/2015/11/01/arp-mitm.html
 [tcpdump]: http://drops.wooyun.org/%E8%BF%90%E7%BB%B4%E5%AE%89%E5%85%A8/8885
 [Greasemonkey]: https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/
 [Greasemonkey-scripts]: https://greasyfork.org/en/scripts/

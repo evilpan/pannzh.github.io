@@ -3,7 +3,7 @@ layout: post
 title:  "记一次被中间人攻击的经历"
 date:   2015-11-01 18:15:26
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 
 俗话说得好，常在河边走，哪能不湿鞋？俗话又说了，出来混，早晚要还的。只是没想到自己还的这么快。就在之前的
@@ -23,7 +23,7 @@ categories: Tech
 以为肯定没问题，结果一上网就发现了那个可恶的弹窗。于是想到也许是被劫持了，查看了ARP发现网关的MAC地址和我记录的地址
 是一样的，然后查看DNS域名服务器：
 
-    #cat /etc/resolv.conf
+    $cat /etc/resolv.conf
 
 是上级NAT分配的域名服务器，似乎也没什么问题。于是先在浏览器上F12查看请求的详情，发现有几条奇怪的GET：
 

@@ -3,7 +3,7 @@ layout: post
 title:  "ARP欺骗与中间人攻击"
 date:   2015-11-01 01:19:26
 comments: true
-categories: Tech
+categories: Tech MITM
 ---
 
 我在上一篇 [WIFI密码破解笔记][wifi-crack]中说到如何探测附近开放的AP并且破解进入，那么进入别人据局域网我们能干些什么呢？
@@ -135,5 +135,5 @@ ARP欺骗又叫ARP投毒（ARP poisoning），实现方式有很多，但其原�
 豆瓣等社交网站，浏览其隐私数据，进行发贴删贴等操作；重责进行钓鱼攻击，使目标下载恶意程序或者执行恶意脚本，从而威胁其计算机安全。当然，应对这种攻击的防范方法也有很多，最简单的一种就是绑定MAC地址，
 并且在网关MAC地址改变的时候发出提醒，从而防止ARP毒化攻击。还有就是最好不要在公共WiFi下浏览有重要隐私的网站，万一碰上不怀好意的人就在局域网中，那可就是真的“在阳光下行走”了。
 
-[wifi-crack]: http://pannzh.github.io/tech/2015/10/31/wifi-crack.html
-[p2p]: http://pannzh.github.io/tech/p2p/2015/10/31/p2p-over-middle-box.html
+[wifi-crack]: http://pannzh.github.io/tech/mitm/2015/10/31/wifi-crack.html
+[p2p]: http://pannzh.github.io/tech/p2p/mitm/2015/10/31/p2p-over-middle-box.html
