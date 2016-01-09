@@ -28,7 +28,31 @@ categories: Tech MITM
 
 其中信道号可以先不填,开启后可以ifconfig看到多了个接口mon0，即为监听接口。值得一提的是，无线网卡的监听模式其实
 就相当于有线情况下的混杂模式（Promiscuous Mode）。
-  
+
+注: 如果在较新的系统上运行,可能会出现错误"SIOCSIFFLAGS: Name not unique on network",
+这是由于新版的Networkmanager把虚拟的往口mon0也当作硬件设备来管理,导致设备冲突.解决方法有很多:
+
+1.把networkmanager暂时关闭.
+
+    #service network-manager stop
+
+    使用完毕之后再打开即可.
+
+2.直接把wlan0网卡设置为monitor模式:
+
+    #ifconfig wlan0 down
+    #iwconfig wlan0 mode monitor
+    #ifconfig wlan0 up
+
+3.前面两种方式都会使得wlan0网卡变为monitor模式,从而无法上网,如果有多个网卡可以考虑这两种方式.
+  但是如果之有一个无线网卡,我们可以修改networkmanager的配置使其不管理指定的网络接口,在/etc/NetworkManager/Networkmanager.conf文件后面加两行:
+
+    #avoid conflicts with airmon-ng 
+    [keyfile]
+    unmanaged-devices=interface-name:wlan0mon;interface-name:wlan1mon;interface-name:mon0;interface-name:mon1
+
+然后再和之前一样使用airmon-ng即可.
+
 ### Step3. 搜索周围的无线网络  
     #airodump-ng mon0
 
