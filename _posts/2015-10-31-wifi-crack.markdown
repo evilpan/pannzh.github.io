@@ -45,7 +45,7 @@ categories: Tech MITM
     #ifconfig wlan0 up
 
 3.前面两种方式都会使得wlan0网卡变为monitor模式,从而无法上网,如果有多个网卡可以考虑这两种方式.
-  但是如果之有一个无线网卡,我们可以修改networkmanager的配置使其不管理指定的网络接口,在/etc/NetworkManager/Networkmanager.conf文件后面加两行:
+  但是如果之有一个无线网卡,我们可以修改networkmanager的配置使其不管理指定的网络接口,在`/etc/NetworkManager/Networkmanager.conf`文件后面加两行:
 
     #avoid conflicts with airmon-ng 
     [keyfile]
@@ -59,7 +59,7 @@ categories: Tech MITM
 这条命令会在mon0接口上不断切换信道来搜索附近的wifi热点，在结果中
 找到待破解的AP，记录BSSID（这里假设为AA:BB:CC:DD:EE:FF），信道号（这里假定为 6），ESSID（设为myWiFi)
 
-### Step4. 测试无线设备的注入
+### Step4. 测试无线设备的注入(可选,为了在WEP加密时进行虚拟认证)
 
     aireplay-ng -9 -e myWiFi -a AA:BB:CC:DD:EE:FF mon0
 
