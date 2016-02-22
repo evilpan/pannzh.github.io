@@ -21,11 +21,11 @@ plugins_dir:  ./_plugins
 layouts_dir:  ./_layouts
 data_dir:     ./_data
 includes_dir: ./_includes
-collections:  null
 paginate: 5
 paginate_path: "page:num"
 permalink:     date
-timezone:      null
+timezone:      Asia/Shanghai
+#collections:  null
 
 #Others
 baiduAccount: ''  #Baidu Analysis Tool
@@ -42,10 +42,10 @@ encoding:     "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
-#markdown:    kramdown
-#highlighter: rouge
-#lsi:         false
-#excerpt_separator: "\n\n"
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
 kramdown:
   input: GFM
   hard_wrap: false
