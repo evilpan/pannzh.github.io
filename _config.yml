@@ -34,7 +34,7 @@ comments: true    #Sitewide comment condition
 share: false    #Sitewide share condition
 
 # Handling Reading
-safe:         true
+safe:         false
 include:      [".htaccess"]
 exclude:      []
 keep_files:   [".git", ".svn"]
@@ -65,7 +65,7 @@ kramdown:
 
 ## Plugins
 #whitelist: []
-#gems:      []
+gems:      ['jekyll-paginate']
 #
 ## Serving
 #detach:  false
