@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Unicode,GBK和UTF-8"
-date:   2016-07-16 14:01:00
+date:   2016-07-17 14:01:00
 comments: true
 categories: Tech
 ---

@@ -25,6 +25,7 @@ paginate: 5
 paginate_path: "page:num"
 permalink:     date
 timezone:      Asia/Shanghai
+future:        true
 #collections:  null
 
 #Others
