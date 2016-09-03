@@ -95,7 +95,9 @@ ARP欺骗又叫ARP投毒（ARP poisoning），实现方式有很多，但其原�
 有时不能这样直接修改，还有另外一种方法
 
     修改/etc/sysctl.conf文件，使得net.ipv4.ip_forward = 1；等于0为不转发。然后更新：
-    #sysctl -p
+    # sysctl -p
+    或者直接
+    # sysctl -w net.ipv4.ip_forward=1
 
 此时本机收到的数据包含源地址和目的地址（外网地址），我们需要将其转发到网关。这里进行了（NAT）网络地址转换的功能，关于NAT可参考我前一篇文章[P2P通信原理与实现][p2p]：
 
