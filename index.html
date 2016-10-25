@@ -1,44 +1,11 @@
----
-layout: default
----
-
-<div class="home">
-
-    <h1 class="page-heading">Posts</h1>
-
-        {% for post in paginator.posts %}
-        <div class="well">
-            <li class="article">
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <h2> <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> </h2>
-                    <p>{{post.excerpt}}</p>
-            </li>
-        </div>
-        {% endfor %}
-
-    <div class="pagination">
-        {% if paginator.previous_page %}
-            {% if paginator.previous_page == 1%}
-                <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">Prev</a>
-            {% else %}
-                <a class="btn btn-default" href="{{ site.baseurl}}/page{{paginator.previous_page}}" class="previous">Prev</a>
-            {% endif %}
-        {% endif %}
-
-        {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-                <span class="active">{{ page }}</span>
-            {% elsif page == 1 %}
-                <a href="{{ site.baseurl}}/index.html">{{ page }}</a>
-            {% else %}
-                <a href="{{ site.baseurl }}/page{{page}}">{{ page }}</a>
-            {% endif %}
-        {% endfor %}
-
-        {% if paginator.next_page %}
-            <a class="btn btn-default" href="{{ site.baseurl}}/page{{paginator.next_page}}" class="next">Next</a>
-        {% endif %}
-    </div>
-
-
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- HTML meta refresh URL redirection -->
+   <meta http-equiv="refresh" content="0; url=http://pppan.tk">
+</head>
+<body>
+   <p>The page has moved to:
+   <a href="http://pppan.tk">pppan.tk</a></p>
+</body>
+</html>
