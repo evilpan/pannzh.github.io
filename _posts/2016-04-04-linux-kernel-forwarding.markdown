@@ -86,12 +86,12 @@ security表在filter表之后调用, 提供了input,output和forward链路.
 工具的产生终究要服务于生产, 光解释名词也不能形象地展现linux强大的内核转发机制,因此以几个小例子来说明iptables的
 具体使用, 并依据上述介绍来写出有实际效用的脚本. iptables命令的一般格式如下:
 
-    iptables [-t table] {-a|-c|-d} chain rule-specification
+    iptables [-t table] {-A|-C|-D} chain rule-specification
 
 其中命令分为三部分,亦即上面说到的指定表,链路和规则
 
     -t table指定表的名字, 若不指定则默认为filter.
-    -a chain表示在链路中增加规则, -c和-d分别表示检查和删除.
+    -A chain表示在链路中增加规则, -C和-D分别表示检查和删除.
     剩余部分指定规则, 格式为`[matches...] [target]`
 
 完整的命令可以通过iptables的manpages查看.
@@ -106,7 +106,7 @@ ip对我进行连接, 甚至连ping都ping不到我.
 
 ```bash
 #1. 清空现有规则
-iptables -t filter -f
+iptables -t filter -F
 #2. 打开网关访问权限
 iptables -t filter -a input -s 192.168.1.1 -j accept
 #3. 指定不过滤ping的返回
@@ -115,7 +115,7 @@ iptables -t filter -a input -p icmp --icmp-type 0 -s 192.168.1.0/24 -j accept
 iptables -t filter -a input -p all -s 192.168.1.0/24 -j drop
 ```
 一般来说防火墙策略一般是从非信任->信任,先用策略(-p policy)关闭所有访问权限,再添加规则按需要逐条打开.
-这里为了简单就在默认策略(accept)的基础上添加规则. 各个表的当前策略可以通过`iptables -t table -s`查看.
+这里为了简单就在默认策略(accept)的基础上添加规则. 各个表的当前策略可以通过`iptables -t table -S`查看.
 要注意的是所有规则是**按顺序检查**的, 一旦检查到符合的条件就会执行,而不往下继续检查,如果所有规则都不匹配,
 则会执行默认的操作(默认策略).因此在逐条添加规则的时候最好是从小到大添加. 
 在#3命令中,我们打开了icmp type为0的输入,即ping echo reply封包, 这样别人ping不到我的同时,我却能ping到别人,是不是很方便?
@@ -133,30 +133,30 @@ ip封包应该往右边的路径转发出去, 不过需要出去前改变一下�
 设置nat转发的规则也很简单:
 
 ```bash
-iptables -t nat -a postrouting -o wlan0 -j masquerade
+iptables -t nat -a POSTROUTING -o wlan0 -j MASQUERADE
 ```
 这是在当我们既用wlan0上网,也用wlan0做路由器的时候配置的nat规则,但是这样性能会不太理想,
 更普遍的情况是我们用一个网卡连接网络(假设为wlan0), 另一个网卡作为路由器(设为wlan1), 
 这种情况下只需要将wlan1的流量转发到wlan0上:
 
 ```
-iptables -t filter -a forward -i wlan1 -o wlan0 -j accept
-iptables -t filter -a forward -i wlan0 -o wlan1 -m state --state established,related -j accept
-iptables -t nat -a postrouting -o wlan0 -j masquerade
+iptables -t filter -a FORWARD -i wlan1 -o wlan0 -j ACCEPT
+iptables -t filter -a FORWARD -i wlan0 -o wlan1 -m state --state established,related -j ACCEPT
+iptables -t nat -a POSTROUTING -o wlan0 -j MASQUERADE
 ```
 其中masquerade表示提供一种类似路由器的转发行为,即为出去的tcp/udp包改变源地址,为进来的包改变目的地址,
 用-j snat可以实现同样功能, 只不过ip地址需要自己指定(这里为wlan0在内网中的地址). masquerade被专门设计
 用于那些动态获取ip地址的连接,比如拨号上网,dhcp连接等.如果你有静态ip,使用snat target可以减少开销.
 
 ```
-iptables -t nat -a postrouting -o wlan0 -p tcp -j snat --to-source [wlan0-ip]
-# 这里不需要设置dnat, 因为snat会记住连接,把响应转发给对应的请求.不过为了例示还是写出来:
-iptables -t nat -a prerouting -i wlan0 -d [wlan0-ip] -p tcp -j dnat --to [client-ip]
+iptables -t nat -a postrouting -o wlan0 -p tcp -j SNAT --to-source [wlan0-ip]
+# 这里不需要设置DNAT, 因为SNAT会记住连接,把响应转发给对应的请求.不过为了例示还是写出来:
+iptables -t nat -a prerouting -i wlan0 -d [wlan0-ip] -p tcp -j DNAT --to [client-ip]
 ```
 这里值得一提的是, iptables本质上只是过滤和处理数据, 所以准确说是**允许**将wlan1的流量转发到wlan0上,
 事实上如果用默认策略, forward都是允许的, 不用额外设置.
 
-### 例3.作为透明代理
+### 例3. 转发端口到透明代理
 
 不同的人对代理有不同的需求, 最常见的就是http代理, 一般提供了地址和端口号. 我们在浏览器中配置使用
 代理并指定地址和端口后, 上网冲浪的请求会经过代理服务器接收,然后根据需要会从为我们去向目的网站请求内容,
@@ -164,11 +164,12 @@ iptables -t nat -a prerouting -i wlan0 -d [wlan0-ip] -p tcp -j dnat --to [client
 和作为路由器类似, 不过除了改变ip还需要改变目的端口号:
 
 ```
-iptables -t nat -a prerouting -i wlan1 -p tcp --dport 80 -j dnat --to [wlan0-ip]:3128
-iptables -t nat -a prerouting -i wlan0 -p tcp --dport 80 -j redirect --to-port 3128
+iptables -t nat -a PREROUTING -i wlan1 -p tcp --dport 80 -j DNAT --to [wlan0-ip]:3128
+iptables -t nat -a PREROUTING -i wlan0 -p tcp --dport 80 -j redirect --to-port 3128
 ```
+这样所有连接wlan1热点的客户端的http流量(80端口)都会通过wlan0上3128的代理才会发出去,并且可以正确返回.
 
-透明代理完整的iptables配置可以参考[set up squid in linux][linux-squid]. 
+透明代理配置可以参考[set up squid in linux][linux-squid]. 
 
 ## 后记
 
